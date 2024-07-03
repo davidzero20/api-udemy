@@ -1,9 +1,5 @@
 const Incident = require('../models/incident');
 
-function HolaMundo(req, res) {
-    console.log('Hola Mundo Carlos con Nodemon')
-}
-
 function createIncident(req,res) {
     
     const incident = new Incident();
@@ -13,6 +9,8 @@ function createIncident(req,res) {
     incident.description = params.description;
     incident.user = params.user;
     incident.severity = params.severity;
+
+    console.log(incident.title);
 
     try {
         const incidentStore = incident.save();
@@ -120,7 +118,6 @@ async function deleteIncident(req,res) {
 
 
 module.exports = {
-    HolaMundo,
     createIncident,
     getIncidents,
     getIncidentsBySeverity,
