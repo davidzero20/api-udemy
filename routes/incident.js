@@ -3,7 +3,6 @@ const IncidentController = require('../controllers/incident');
 
 const api = express.Router();
 
-api.get('/HolaMundo', IncidentController.HolaMundo);
 api.post("/createIncident", IncidentController.createIncident);
 api.get("/getIncidents", IncidentController.getIncidents);
 api.get("/getIncidentsBySeverity", IncidentController.getIncidentsBySeverity);
